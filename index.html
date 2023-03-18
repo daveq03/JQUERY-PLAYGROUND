@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JQUERY EXERCISE PLAYGROUND</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <style>
+    #div1,#div2,#div3{
+      width: 80px;
+      height: 80px;
+      display: none;
+      margin: 10px;
+    }
+    #div1{
+      background-color: red;
+    }
+    #div2{
+      background-color: green;
+    }
+    #div3{
+      background-color: blue;
+    }
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("button").addClass("animate__animated animate__bounce");
+      $(".card").addClass("animate__animated animate__shakeX");
+      $("#target--3").addClass("animate__animated animate__shakeY");
+      // $("button").removeClass("btn-primary");
+      // $("#target--1").css("color", "yellow");
+    /*  let a=1;
+      if(a==1){
+      $("button").prop("disabled", true);
+    }else{
+      $("button").prop("disabled", false);
+    }*/
+    // $("#target--5").html("<em>Target 5</em>");
+    // $("#target--6").text("Button 6");
+    // // $("#target--6").remove();
+    // $("#target--4").appendTo("#left-card");
+    // $("#target--3").appendTo("#right-card");
+    // $("#target--6").clone().appendTo("#left-card");
+    // $("#target--1").parent().css("background-color", "lightblue");
+    // $("#right-card").children().css("color", "red");
+    $(".target:odd").addClass("animate__animated animate__zoomInUp");
+    $(".target:even").addClass("animate__animated animate__slideInDown");
+    // $("body").addClass("animate__animated animate__hinge");
+    $("#hide").click(function(){
+      $("p").hide();
+    });
+    $("#show").click((()=>{
+      $("p").show();
+    }));
+    $("#btnWithDelay").click(function(){
+      $("#hideWithDelay").hide(2000);
+    })
+    $("#btn--toggle").click(()=>{
+      $("#para--toggle").toggle();
+    })
+    $("#btn--fade").click(function(){
+      $("#div1").fadeIn("fast");
+      $("#div2").fadeIn("slow");
+      $("#div3").fadeIn("8000");
+    })
+
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1 class="text-primary text-center animate__animated animate__zoomIn">Jquery Exercise Playground</h1>
+  </header>
+  <main>
+    <section>
+      <h3>CHALLENGES</h3>
+      <div class="row">
+        <div class="col-lg-6" style="background-color: yellow;">
+          
+      <div class="card" id="left-card">
+        <div class="card-body">
+          <h4 class="card-title">Left Card</h4>
+          <img src="https://logos-download.com/wp-content/uploads/2017/05/jQuery_logo-700x171.png" alt="jquery" class="card-img-top">
+        <button type="button" class="btn btn-primary target" id="target--1">Target 1</button>
+        <button type="button" class="btn btn-secondary target" id="target--2">Target 2</button>
+        <button type="button" class="btn btn-success target" id="target--3">Target 3</button>
+      </div>
+      </div>     
+        </div>
+        <div class="col-lg-6" style="background-color: green;">
+          
+        <div class="card" id="right-card">
+          <div class="card-body">
+            <h4 class="card-title">Right Card</h4>
+            <img src="https://logos-download.com/wp-content/uploads/2017/05/jQuery_logo-700x171.png" alt="jquery" class="card-img-top">
+          <button type="button" class="btn btn-danger target" id="target--4">Target 4</button>
+          <button type="button" class="btn btn-warning target" id="target--5">Target 5</button>
+          <button type="button" class="btn btn-info target" id="target--6">Target 6</button>
+        </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Jquery Effects</h2>
+      <h3>Hide and show</h3>
+      <p>we can hide a button and show a button</p>
+      <button id="hide">HIDE</button>
+      <button id="show">SHOW</button>
+      <hr>
+    <button id="btnWithDelay">HIDE WITH DELAY</button>
+    <p id="hideWithDelay">This is our first paragraph.</p>
+    <p class=".para--1seconds">This is our second paragraph.</p>
+    <hr>
+    <h4>Toggle effect</h4>
+    <button id="btn--toggle">Toggle Paragraphs</button>
+    <p id="para--toggle">This is our paragraph for testing</p>
+  </section>
+  <section style="height: 50vh; background-color: lightblue;">
+    <button id="btn--fade">Click to Fade</button>
+    <h2>FADE EFFECT</h2>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+  </section>
+    
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
